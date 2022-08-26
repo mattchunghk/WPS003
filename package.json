@@ -6,13 +6,16 @@
     "scripts": {
         "ex001": "ts-node ex001.ts",
         "ex002": "ts-node ex002.ts",
+        "ex003": "ts-node ex003.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "@types/node": "^18.7.13",
+        "@types/papaparse": "^5.3.4",
         "node-fetch": "^3.2.10",
+        "papaparse": "^5.3.2",
         "ts-node": "^10.9.1",
         "typescript": "^4.8.2"
     },

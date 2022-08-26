@@ -1,25 +1,45 @@
 import fs from 'fs';
 
- function listAllJsRecursive2 (path:string){
+//  function listAllJsRecursive2 (path:string){
+//     return new Promise((resolve,reject)=>{
+//          fs.readdir(path,(err,files)=>{if(err) reject(err);
+//             files.map(file=>{fs.stat(`${path}/${file}`,(err,stats)=>{if(err) reject(err);
+//                     if(stats.isDirectory()){
+//                             listAllJsRecursive2(`${path}/${file}`)
+//                     }else{
+//                         let filePath =  file.split('.').pop()
+//                         if(filePath == "ts"){
+//                             resolve(console.log(path+file));   
+//                      }                
+//                     }
+//                 })                
+//             })
+//         })
+//     })   
+// }
+
+function listAllJsRecursive2 (path:string){
     return new Promise((resolve,reject)=>{
-         fs.readdir(path,(err,files)=>{
-            if(err) reject(err);
-            files.map(file=>{
-                fs.stat(`${path}/${file}`,(err,stats)=>{
-                    if(err) reject(err);
-                    if(stats.isDirectory()){
-                            listAllJsRecursive2(`${path}/${file}`)
-                    }else{
-                        let filePath =  file.split('.')
-                        if(filePath[1] == "ts"){
-                            resolve(console.log(path+file));   
-                     }                
-                    }
-                })                
-            })
+        let files = fs.readdirSync(path)
+        for (let file of files){
+           fs.stat(`${path}/${file}`, (error, stats)=>{if(error) reject(error);
+            if(stats.isDirectory()){
+                listAllJsRecursive2 (`${path}/${file}`)
+            }else{
+                let filePath =  file.split('.').pop()
+                 if(filePath == "ts"){
+                resolve(console.log(path+file));   
+
+            }
+        }
         })
-    })   
+           
+        }
+ 
+    })
+
 }
+
 
 
 

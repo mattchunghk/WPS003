@@ -7,7 +7,6 @@ async function listAllJs (path: string){
     .then(filenames => { 
         filenames.map(filename => {
            let filePath =  filename.split('.').pop()
-        
            if(filePath == "ts"){
             console.log(path+filename)
         }
