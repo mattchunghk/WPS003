@@ -9,7 +9,7 @@ const readLineInterface = readline.createInterface({
 function ask(question:string,answerKey:string) {
     return new Promise(resolve => {
         readLineInterface.question(question, input => resolve(`${answerKey} ${input}`));
-    });
+    })
   }
 
 
