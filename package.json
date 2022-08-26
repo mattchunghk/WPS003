@@ -5,6 +5,7 @@
     "main": "index.js",
     "scripts": {
         "ex001": "ts-node ex001.ts",
+        "ex002": "ts-node ex002.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
