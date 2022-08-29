@@ -14,10 +14,31 @@ function ask(question:string,answerKey:string) {
 
 
 
-ask("What is your name?",`Your name is `)
-    .then(result => { console.log(result); return ask("What is your age?",`Your age is `); })
-    .then(result => { console.log(result); return ask("What is your pet?",`Your pet is `); })
-    .then(result => { console.log(result); readLineInterface.close() });
+// ask("What is your name?",`Your name is `)
+//     .then(result => { console.log(result); return ask("What is your age?",`Your age is `); })
+//     .then(result => { console.log(result); return ask("What is your pet?",`Your pet is `); })
+//     .then(result => { console.log(result); readLineInterface.close() });
+
+
+
+async function main () {
+    
+    try{
+        await ask("What is your age? ",`Your age is `);
+        await ask("What is your pet? ",`Your pet is `);
+        await ask("where is your home? ",`Your home is `);
+        readLineInterface.close()
+
+
+    }catch(err){
+        console.log(err);
+    }
+    
+}
+
+main()
+
+
 
 
 

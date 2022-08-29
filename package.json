@@ -7,6 +7,7 @@
         "ex001": "ts-node ex001.ts",
         "ex002": "ts-node ex002.ts",
         "ex003": "ts-node ex003.ts",
+        "ex004": "ts-node ex004.ts",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
@@ -16,10 +17,10 @@
         "@types/papaparse": "^5.3.4",
         "node-fetch": "^3.2.10",
         "papaparse": "^5.3.2",
-        "ts-node": "^10.9.1",
-        "typescript": "^4.8.2"
+        "ts-node": "^10.9.1"
     },
     "devDependencies": {
-        "jest": "^29.0.0"
+        "jest": "^29.0.0",
+        "typescript": "^4.8.2"
     }
 }
